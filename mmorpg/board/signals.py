@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.template.loader import render_to_string
-
 from .models import Post, Author, ResponsePost
 from allauth.account.signals import user_signed_up
 from django.contrib.auth.models import Group

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'default.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <title>{% block title %} responses list {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+
+
+
+
+
+
+
+
+{% comment %}
+<form method="get">
+   {{ filter.form.as_p }}
+   <input type="submit" value="search" />
+</form>
+
+{% if rr %}
+  {% for response in rr %}
+      <div class="card">
+        <div class="card-header">
+          Новый отклик от {{ response.date_created }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Отклик от {{response.user_sender}} на пост <a href="{% url 'post_detail' response.post.id %}">{{response.post.title}}</a> ({{response.post.author_post}})</h5>
+          <p class="card-text">Сообщение: {{response.text}}</p>
+          {% if response.status == "N" %}
+            <p>status = Ожидание</p>
+          {% elif response.status == "A" %}
+            <p>status = Принят</p>
+          {% elif response.status == "D" %}
+            <p>status = Отвергнут</p>
+          {% endif %}
+          <form method="post">
+            {% csrf_token %}
+              <input type="hidden" name="category_id" value="{{ response.id }}" />
+              <button name="action" class="btn btn-success" value="acceptR">Приниять</button>
+              <button name="action" class="btn btn-danger" value="deniedR">Отклонить</button>
+          </form>
+        </div>
+      </div>
+  {% endfor %}
+  {% else %}
+    <h2>Нету откликов</h2>
+  {% endif %}
+{% endcomment %}
+{% endblock %}
+</body>
+</html>

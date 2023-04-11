@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'default.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <title>{% block title %} post delete {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    {{ form }}
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}
+</body>
+</html>

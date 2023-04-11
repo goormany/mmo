@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'default.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <title>{% block title %} Ошибка 403 {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<h2>403 error</h2> Кажется, у Вас нет доступа к данной странице...
+{% endblock %}
+</body>
+</html>

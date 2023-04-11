@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'default.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <title>{% block title %} respond {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send message">
+</form>
+{% endblock %}
+</body>
+</html>

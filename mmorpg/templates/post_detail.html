@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'default.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <title>{% block title %} post detail {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<h2>{{post.title}}</h2>
+<p>{{post.text}}</p>
+{% endblock %}
+</body>
+</html>

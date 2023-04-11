@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     # django_filters
     'django_filters',
 
-    # ckeditor
-    'ckeditor'
+    # django_summernote
+    'django_summernote'
 ]
 
 MIDDLEWARE = [
@@ -147,7 +147,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR / "my_static")
+# STATIC_ROOT = os.path.join(BASE_DIR / "static")
 # end static
 
 

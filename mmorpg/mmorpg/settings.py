@@ -56,7 +56,11 @@ INSTALLED_APPS = [
     'django_filters',
 
     # django_summernote
-    'django_summernote'
+    'django_summernote',
+
+    # django-ckeditor
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -189,3 +193,10 @@ EMAIL_USE_SSL = True
 SERVER_EMAIL = os.getenv('DEFAULT_EMAIL_ADDRESS')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_EMAIL_ADDRESS')
 # end mail backend
+
+# ckeditor
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# end ckeditor

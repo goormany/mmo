@@ -9,7 +9,7 @@
 <body>
 {% block content %}
 <h2>{{post.title}}</h2>
-<p>{{post.text}}</p>
+<p>{{post.text | safe}}</p>
 {% endblock %}
 </body>
 </html>

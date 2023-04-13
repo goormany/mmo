@@ -13,7 +13,7 @@
           <div class="card-body">
             <h5 class="card-title">{{i.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{i.author_post}}</h6>
-            <p class="card-text">{{i.previous_text}}</p>
+            <p class="card-text">{{i.previous_text | safe}}</p>
             <a href="{% url 'post_detail' i.pk %}" class="card-link">Читать дальше</a>
             <a href="{% url 'respond' i.pk %}" class="card-link">Откликнуться</a>
           </div>
